@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ValidateSessionGuard } from '@core/guards/validate-session.guard';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
     path: 'task',
     loadChildren: () =>
       import('./modules/task/task.module').then((m) => m.TaskModule),
+    canActivate: [ValidateSessionGuard],
   },
 ];
 
