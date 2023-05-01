@@ -3,17 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { TaskRoutingModule } from './task-routing.module';
 import { TaskPageComponent } from './page/task-page.component';
-import { LoginPageComponent } from './page/login-page.component';
-
+import { TaskComponent } from './components/task-component';
 
 @NgModule({
-  declarations: [
-    TaskPageComponent,
-    LoginPageComponent
-  ],
-  imports: [
-    CommonModule,
-    TaskRoutingModule
-  ]
+  declarations: [TaskPageComponent, TaskComponent],
+  imports: [CommonModule, TaskRoutingModule],
 })
-export class TaskModule { }
+export class TaskModule {}
