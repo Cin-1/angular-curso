@@ -6,7 +6,7 @@ import { ReplaceSpacePipe } from '@shared/pipe/replace-space.pipe';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css'],
 })
-export class LoginPageComponent implements OnInit {
+export class LoginComponent implements OnInit {
   value = 'hello world';
   constructor(private replaceSpace: ReplaceSpacePipe) {}
   ngOnInit(): void {
