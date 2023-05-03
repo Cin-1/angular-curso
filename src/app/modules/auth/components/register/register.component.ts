@@ -6,6 +6,7 @@ import {
   AbstractControl,
 } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { TestService } from '@modules/auth/services/test.service';
 
 @Component({
   selector: 'app-register-form',
@@ -15,14 +16,14 @@ import { Component, OnInit } from '@angular/core';
 export class RegisterFormComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({});
 
-  //constructor(private authService: AuthTestService) {}
+  constructor(private authService: TestService) {}
 
   ngOnInit(): void {
     this.registerForm = new FormGroup(
       {
         email: new FormControl('', {
           validators: [Validators.required, Validators.email],
-          // asyncValidators: this.authService.uniqueEmailValidator(),
+          asyncValidators: this.authService.uniqueEmailValidator(),
           updateOn: 'blur',
         }),
         name: new FormControl('', [
@@ -46,10 +47,6 @@ export class RegisterFormComponent implements OnInit {
         validators: passwordMatchValidator,
       }
     );
-
-    this.registerForm.valueChanges.subscribe((res) => {
-      console.log('👌👌👌', res);
-    });
   }
 
   testLoaded(): void {
