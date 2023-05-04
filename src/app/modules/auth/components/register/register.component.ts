@@ -6,7 +6,7 @@ import {
   AbstractControl,
 } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { TestService } from '@modules/auth/services/test.service';
+import { AuthTestService } from '@modules/auth/services/test.service';
 
 @Component({
   selector: 'app-register-form',
@@ -16,7 +16,7 @@ import { TestService } from '@modules/auth/services/test.service';
 export class RegisterFormComponent implements OnInit {
   registerForm: FormGroup = new FormGroup({});
 
-  constructor(private authService: TestService) {}
+  constructor(private authService: AuthTestService) {}
 
   ngOnInit(): void {
     this.registerForm = new FormGroup(
