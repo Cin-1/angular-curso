@@ -5,7 +5,7 @@
         </div>
         <div class="menu">
             <ul>
-                <li *ngFor="let item of menu;let primero = first">
+                <li [ngClass]="{'active':primero}" *ngFor="let item of menu;let primero = first">
                     {{item.name}}
                 </li>
             </ul>

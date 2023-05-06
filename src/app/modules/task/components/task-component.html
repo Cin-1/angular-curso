@@ -1,3 +1,8 @@
 <app-header></app-header>
-<button>cambiar</button>
+<button (click)=mostrarElementof()>cambiar</button>
 <div *ngIf="mostrarElemento">hola mundo </div>
+<div class="padre" [ngSwitch]="case">
+    <div *ngSwitchCase="1" class="hijo">Alo Cin</div>
+    <div *ngSwitchCase="2" class="hijo">Alo Camotin</div>
+    <div *ngSwitchCase="3" class="hijo">Marquis chan</div>
+</div>

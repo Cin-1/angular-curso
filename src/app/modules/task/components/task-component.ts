@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskComponent implements OnInit {
   mostrarElemento: boolean = false;
+  case: number = 3;
   constructor() {}
 
   ngOnInit(): void {}
 
   mostrarElementof(): void {
-    !this.mostrarElemento;
+    console.log('string');
+    this.mostrarElemento = !this.mostrarElemento;
+    console.log(this.mostrarElemento);
   }
 }
